@@ -11,7 +11,18 @@ public class GenericMethodExample {
     
         print(ints);
         print(daysOfTheWeek);
+        System.out.println(countGreaterThan(ints, 50));
     }
+    public static <T extends Comparable<T>> int countGreaterThan(T[] list, T elem){
+        int count = 0;
+        for(T element:list){
+            if (element.compareTo(elem) > 0){
+                count++;
+            }
+        }
+        return count;
+    }
+    
     public static <E> void print(E[] list) 
     {
         for(E element:list){
